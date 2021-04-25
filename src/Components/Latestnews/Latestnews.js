@@ -2,7 +2,9 @@ import {React,useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from './Latestnews.module.css'
 import Newscard from './Newscard/Newscard'
-const url=`https://newsapi.org/v2/top-headlines?country=in&category=health&q=Covid-19&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+const my_api_key=process.env.REACT_APP_NEWS_API_KEY
+console.log(my_api_key);
+const url=`https://newsapi.org/v2/top-headlines?country=in&category=health&q=Covid-19&apiKey=${my_api_key}`
 const Latestnews = () => {
     const [articles, setarticles] = useState([])
     useEffect(() => {
