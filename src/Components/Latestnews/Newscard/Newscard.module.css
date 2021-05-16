@@ -13,13 +13,12 @@
     
 }
 .Image{
-   height: 100%;
-   width: 100%;
+   height: auto;
+   width:100%;
 }
 .Imagebg{
-    height: 68%;
+    height:auto;
     width: 100%;
-    background-image: url('../../../Assets/default.png');
 }
 .Title{
     padding: 0 1%;
@@ -39,4 +38,13 @@
     background-color: black;
     color:rgba(11, 238, 238, 1);
     cursor: pointer;
+}
+
+
+@media screen and (max-width:1060px){
+
+    .Newscard{
+        height: 50%;
+        width: 80%;
+    }
 }

@@ -1,8 +1,23 @@
 .Nav{
     background-color: #5268E7;
+    width: 100vw;
 
 }
-.Nav>h2{
+.Nav>h1{
     margin: 0%;
     padding: 0.5%;
+    font-size: 2.4rem;
+}
+span{
+    font-size: 2.4rem;
+}
+@media only screen and (max-width: 1060px) {
+    .App{
+        display: flex;
+        flex-direction: column;
+    }
+    *{
+        font-size: 1rem;
+    }
+    
 }

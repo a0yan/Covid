@@ -29,9 +29,9 @@ function App() {
       {(statewise.length !== 0 && tested.length !== 0) ? (
         <>
           <div className='Nav'>
-            <h2>COVID-<span style={{ color: ' rgba(219, 33, 33, 0.637)' }}>19</span></h2>
+            <h1>COVID-<span style={{ color: '#f71111' }}>19</span></h1>
           </div>
-          <Introduction total_cases={statewise[0].confirmed} total_deaths={statewise[0].deaths} total_recovered={statewise[0].recovered} total_tests={tested[n - 1].totalsamplestested} total_vaccinated={tested[n - 1].totalindividualsvaccinated} />
+          <Introduction total_cases={statewise[0].confirmed} total_deaths={statewise[0].deaths} total_recovered={statewise[0].recovered} total_tests={tested[n - 1].totalsamplestested} total_vaccinated={tested[n - 1].totaldosesadministered} />
           <Protect />
           <Casetimechart casetime={casetime} />
           <Statewisechart statewise={statewise} />

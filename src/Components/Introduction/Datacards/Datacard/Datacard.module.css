@@ -29,3 +29,14 @@
     
     
 }
+
+
+@media only screen and (max-width: 1060px){
+    .Datacard{
+        width: 150px;
+        height: 150px;
+        font-size: 0.7rem;
+        justify-content: center;
+        margin: 1% 3%;
+    }
+}

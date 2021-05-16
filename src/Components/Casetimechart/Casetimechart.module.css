@@ -1,0 +1,12 @@
+.Casetimechart{
+padding-bottom: 5%;
+text-align: center;
+}
+
+@media screen and (max-width:1060px) {
+    .Casetimechart{
+    padding-bottom: 25%;}
+    .Casetimechart>h1{
+        font-size: 1.8rem;
+    }
+}

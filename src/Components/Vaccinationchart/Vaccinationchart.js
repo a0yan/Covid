@@ -1,6 +1,12 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import { Line } from 'react-chartjs-2';
+import styles from './Vaccinationchart.module.css'
 const Vaccinationchart = ({ tested_data }) => {
+    const [windowWidth, setwindow] = useState(window.innerWidth)
+    useEffect(() => {
+        setwindow(window.innerWidth)
+    }, [windowWidth])
+    
     const first_vaccinated = []
     const second_vaccinated = []
     const labels = []
@@ -37,7 +43,7 @@ const Vaccinationchart = ({ tested_data }) => {
             data: tested,
             fill:true,
             borderColor: 'rgba(223, 164, 76, 1)',
-            backgroundColor: 'rgba(223, 164, 76, 0.6)',
+            backgroundColor: 'rgba(223, 164, 76, 0.7)',
             
         },
         {
@@ -45,16 +51,18 @@ const Vaccinationchart = ({ tested_data }) => {
             data: first_vaccinated,
             fill:true,
             borderColor: 'rgb(252, 98, 252,1)',
-            backgroundColor: 'rgb(252, 98, 252,0.6)',
+            backgroundColor: 'rgb(252, 98, 252,0.7)',
         },{
             label:'2nd Dose Vaccinated',
             data:second_vaccinated,
             fill:true,
             borderColor:'rgb(252,200,190)',
-            backgroundColor:'rgb(252,200,190,0.6)',
+            backgroundColor:'rgb(252,200,190,0.7)',
         }]
     }
     const options = {
+        responsive:true,
+        maintainAspectRatio:false,
         elements: {
             point:{
                 radius: 1
@@ -65,10 +73,7 @@ const Vaccinationchart = ({ tested_data }) => {
                     display: true,
                     text: 'DAYS',
                     color: 'white',
-                    font:{
-                        size:20,
-                        weight:'bold'
-                    }
+                    
                 },
                 ticks: {
                     display: true,
@@ -82,10 +87,7 @@ const Vaccinationchart = ({ tested_data }) => {
                     display: true,
                     text: 'COUNT',
                     color: 'white',
-                    font:{
-                        size:20,
-                        weight:'bold'
-                    }
+                    
                 },
             }
         },
@@ -101,21 +103,23 @@ const Vaccinationchart = ({ tested_data }) => {
             legend: {
                 labels: {
                     font: {
-                        size: 35
+                        size:18
                     }
                 }
             }
         },
         layout: {
-            padding: 43
+            padding:15
         }
     }
 
     return (
-        <div style={{ backgroundColor: '#5268E7',textAlign:'center',width:'100vw'}}>
-            <h1 style={{ marginTop: 0,paddingTop: '2%' }}>Comparision Between Vaccination And Tests (India)</h1>
-            <h3 style={{ marginTop: 0 }}>(Click On Legends To Show/Hide Individual Graph )</h3>
-            <Line data={data} options={options} />
+        <div className={styles.Vaccinationchart}>
+            <h1 style={{ margin: 0,paddingTop: '2%' }}>Comparision Between Vaccination And Tests (India)</h1>
+            <h3 style={{ margin: 0 }}>(Click On Legends To Show/Hide Individual Graph )</h3>
+            {windowWidth>=1060?<Line data={data} options={options} height={100} width={100} />:
+            <Line data={data} options={options} height={500} width={120} />}
+            
         </div>
     )
 }

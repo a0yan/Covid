@@ -1,0 +1,16 @@
+.Statewisechart{
+    text-align: center;
+    background-color: rgba(87,152,236);
+    height: 100vh;
+    width: 100vw;
+}
+@media screen and (max-width:1060px) {
+    .Statewisechart{
+        padding-top: 10%;
+        height: 88vh;
+    }
+    .Statewisechart>h1{
+        font-size: 1.8rem;
+    }
+    
+}

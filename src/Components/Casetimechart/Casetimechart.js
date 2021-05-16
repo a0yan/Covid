@@ -1,5 +1,6 @@
 import React from 'react'
 import { Line, defaults } from 'react-chartjs-2'
+import styles from './Casetimechart.module.css'
 defaults.color = 'rgba(255,255,255)'
 const Casetimechart = ({ casetime }) => {
     const deaths = []
@@ -41,6 +42,9 @@ const Casetimechart = ({ casetime }) => {
     };
 
     const options = {
+        responsive:true,
+        maintainAspectRatio:false,
+
         elements: {
             point:{
                 radius: 1
@@ -51,10 +55,7 @@ const Casetimechart = ({ casetime }) => {
                     display: true,
                     text: 'DAYS',
                     color: 'white',
-                    font:{
-                        size:20,
-                        weight:'bold'
-                    }
+                    
                 },
                 ticks: {
                     display: true,
@@ -68,10 +69,6 @@ const Casetimechart = ({ casetime }) => {
                     display: true,
                     text: 'COUNT',
                     color: 'white',
-                    font:{
-                        size:20,
-                        weight:'bold'
-                    }
                 },
             }
         },
@@ -80,29 +77,28 @@ const Casetimechart = ({ casetime }) => {
                 display:true,
                 text:'COVID V/S Time',
                 font:{
-                    size:25,
-                    weight:'bold'
+                    size:18,
                 }
             },
             legend: {
                 labels: {
                     font: {
-                        size: 35
+                        size: 18
                     }
                 }
             }
         },
         layout: {
-            padding: 43
+            padding: 15
         }
     }
 
 
     return (
-        <div style={{ backgroundColor: '#3E54D2', height: '105vh', width: '100vw', textAlign: 'center' }}>
-            <h1 style={{ marginTop: 0,paddingTop: '2%' }}>Visualised Data of New Cases , Recovery And Deaths (India)</h1>
-            <h3 style={{ marginTop: 0 }}>(Click On Legends To Show/Hide Individual Graph )</h3>
-            <Line data={data} options={options} height={99} width={250} />
+        <div className={styles.Casetimechart} style={{ backgroundColor: '#3E54D2', height: '100vh', width: '100vw'}}>
+            <h1 style={{ margin: 0,paddingTop: '0.5%' }}>Visualised Data of New Cases , Recovery And Deaths (India)</h1>
+            <h3 style={{ margin: 0 }}>(Click On Legends To Show/Hide Individual Graph )</h3>
+            <Line data={data} options={options} height={96} width={250} />
         </div>
     )
 }

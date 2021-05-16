@@ -24,3 +24,30 @@
     font-size: 5rem;
     margin:0.8px;
 }
+@media only screen and (max-width: 1060px){
+    .Introduction{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding-bottom: 5%;
+    }
+    .Body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+    }
+    .Icon{
+        height: 0%;
+        width: 0%;
+        position: relative;
+        flex: 0.5;
+    }
+    .Heading{
+        font-size: 2.3rem;
+    }
+    .Text{
+        width:80%;
+    }
+}

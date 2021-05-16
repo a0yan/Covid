@@ -14,3 +14,10 @@
     padding:1% 0;
     margin-top: 0;
 }
+@media screen and (max-width:1060px) {
+    .Newscards{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

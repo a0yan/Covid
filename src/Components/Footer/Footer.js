@@ -7,7 +7,7 @@ const Footer = () => {
         <div className={styles.Footer}>
             <div className={styles.Container}>
             <h3>Created by -- Ayan Shrivastava</h3>
-            (During Lockdown huh!!)
+                (During Lockdown huh!!)
             </div>
             <div>
                 <h5 style={{marginBottom:'0'}}>All Rights Reserved <br></br> &#169;  Copyright 2021  </h5>
