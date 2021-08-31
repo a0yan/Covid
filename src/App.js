@@ -10,15 +10,20 @@ import Latestnews from './Components/Latestnews/Latestnews';
 import Footer from './Components/Footer/Footer';
 
 function App() {
-  const url = "https://api.covid19india.org/data.json"
+  const url = "https://data.covid19india.org/data.json"
   const [casetime, setcasetime] = useState([])
   const [statewise, setstatewise] = useState([])
   const [tested, settested] = useState([])
   const getData = async () => {
-    const response = await axios.get(url)
-    await setcasetime(response.data["cases_time_series"])
-    await setstatewise(response.data.statewise)
-    await settested(response.data.tested)
+    try {
+      const response = await axios.get(url)
+      await setcasetime(response.data["cases_time_series"])
+      await setstatewise(response.data.statewise)
+      await settested(response.data.tested)  
+    } catch (error) {
+      console.error(error.response.data)
+    }
+    
   }
   useEffect(() => {
     getData()
